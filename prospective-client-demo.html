@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Standalone homepage design concept for Nephrology Hypertension Specialists.">
+  <title>NHS Homepage Design Concept</title>
+  <style>
+    :root{
+      --navy:#123b61;
+      --navy-deep:#0b2943;
+      --teal:#15999b;
+      --aqua:#dff3f1;
+      --sky:#eaf4fb;
+      --cream:#fbfaf6;
+      --ink:#20313d;
+      --muted:#627480;
+      --line:#dce7eb;
+      --white:#fff;
+      --shadow:0 24px 70px rgba(10,42,67,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--white);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    img{display:block;max-width:100%}
+    .shell{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+    .concept-bar{background:var(--navy-deep);color:#dcebf2;font-size:12px;letter-spacing:.02em}
+    .concept-bar .shell{min-height:36px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .concept-label{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:#fff}
+    .concept-dot{width:7px;height:7px;border-radius:50%;background:#5ed1c7;box-shadow:0 0 0 4px rgba(94,209,199,.15)}
+    .header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+    .header-row{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .logo{width:300px;height:66px;object-fit:contain;object-position:left center}
+    .nav{display:flex;align-items:center;justify-content:flex-end;gap:24px;color:#536773;font-size:13px;font-weight:750}
+    .nav span{white-space:nowrap}
+    .nav .nav-cta{padding:12px 17px;border-radius:10px;background:var(--navy);color:#fff}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(145deg,#f7fbfc 0%,#fff 55%,#edf7f7 100%);padding:82px 0 68px}
+    .hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-210px;top:-250px;background:radial-gradient(circle,rgba(21,153,155,.15),rgba(21,153,155,0) 68%)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+    .eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--teal);font-size:11px;font-weight:900}
+    h1,h2,h3{color:var(--navy-deep);line-height:1.08}
+    h1{font-size:clamp(48px,6vw,78px);letter-spacing:-.055em;margin:14px 0 22px;max-width:760px}
+    h2{font-size:clamp(34px,4vw,52px);letter-spacing:-.04em;margin:10px 0 16px}
+    h3{font-size:19px;margin:0 0 9px}
+    .hero-copy{font-size:19px;color:var(--muted);max-width:650px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .demo-button{display:inline-flex;min-height:50px;align-items:center;justify-content:center;padding:0 20px;border-radius:11px;font-size:14px;font-weight:850}
+    .demo-button.primary{background:var(--navy);color:#fff;box-shadow:0 12px 28px rgba(18,59,97,.18)}
+    .demo-button.secondary{border:1px solid var(--line);background:#fff;color:var(--navy)}
+    .hero-note{margin-top:22px;color:#71828c;font-size:12px}
+    .care-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px;box-shadow:var(--shadow)}
+    .care-card:after{content:"";position:absolute;width:110px;height:6px;border-radius:999px;left:30px;top:0;background:linear-gradient(90deg,var(--teal),#69c8c0)}
+    .care-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:18px}
+    .care-card-head p{margin:3px 0 0;color:var(--muted);font-size:13px}
+    .availability{background:#e7f6ef;color:#2a7454;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:850;white-space:nowrap}
+    .care-list{display:grid;gap:2px}
+    .care-row{display:grid;grid-template-columns:44px 1fr auto;gap:13px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+    .care-row:last-child{border-bottom:0}
+    .care-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:var(--aqua);color:var(--teal);font-weight:900}
+    .care-row strong{display:block;color:var(--navy-deep)}
+    .care-row small{color:var(--muted)}
+    .arrow{color:var(--teal);font-size:20px}
+    .trust-strip{border-bottom:1px solid var(--line);background:#fff}
+    .trust-grid{min-height:120px;display:grid;grid-template-columns:repeat(4,1fr);align-items:center}
+    .trust-item{padding:10px 28px;border-right:1px solid var(--line)}
+    .trust-item:first-child{padding-left:0}
+    .trust-item:last-child{border-right:0}
+    .trust-item strong{display:block;color:var(--navy);font-size:24px;letter-spacing:-.03em}
+    .trust-item span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+    .section{padding:92px 0}
+    .section.soft{background:#f4f8f9}
+    .section-head{max-width:750px;margin-bottom:34px}
+    .section-head p{color:var(--muted);font-size:17px}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{position:relative;min-height:240px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;overflow:hidden}
+    .service:before{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-55px;top:-55px;background:var(--sky)}
+    .service-number{position:relative;width:40px;height:40px;border-radius:12px;background:var(--aqua);display:grid;place-items:center;color:var(--teal);font-size:12px;font-weight:900;margin-bottom:38px}
+    .service p{color:var(--muted);font-size:14px;margin-bottom:0}
+    .practice-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:58px;align-items:center}
+    .practice-visual{position:relative;min-height:470px;border-radius:28px;background:linear-gradient(160deg,var(--navy),#1e6685);overflow:hidden;box-shadow:var(--shadow)}
+    .practice-visual:before,.practice-visual:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.22)}
+    .practice-visual:before{width:360px;height:360px;right:-90px;top:-70px}
+    .practice-visual:after{width:240px;height:240px;right:-20px;top:-10px}
+    .visual-copy{position:absolute;inset:auto 34px 34px;color:#fff}
+    .visual-copy span{display:block;color:#a9dbdb;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:900}
+    .visual-copy strong{display:block;font-size:36px;line-height:1.1;letter-spacing:-.04em;margin-top:8px;max-width:390px}
+    .feature-list{display:grid;gap:16px;margin-top:30px}
+    .feature{display:grid;grid-template-columns:34px 1fr;gap:13px}
+    .check{width:30px;height:30px;border-radius:50%;background:var(--aqua);color:var(--teal);display:grid;place-items:center;font-weight:900}
+    .feature strong{display:block;color:var(--navy-deep)}
+    .feature span{font-size:13px;color:var(--muted)}
+    .location-panel{display:grid;grid-template-columns:1fr .8fr;gap:46px;align-items:center;background:var(--cream);border:1px solid #ebe6d9;border-radius:26px;padding:44px}
+    .location-info{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+    .location-info div{background:#fff;border:1px solid #ebe6d9;border-radius:14px;padding:16px}
+    .location-info small{display:block;text-transform:uppercase;letter-spacing:.1em;color:#8a7f68;font-size:9px;font-weight:900;margin-bottom:5px}
+    .location-info strong{color:var(--navy-deep);font-size:13px}
+    .map-card{min-height:280px;position:relative;border-radius:20px;background:linear-gradient(135deg,#e3eee9,#d4e3ec);overflow:hidden}
+    .map-card:before{content:"";position:absolute;inset:0;background:linear-gradient(24deg,transparent 45%,rgba(255,255,255,.8) 46% 49%,transparent 50%),linear-gradient(110deg,transparent 42%,rgba(255,255,255,.85) 43% 47%,transparent 48%)}
+    .pin{position:absolute;left:52%;top:43%;width:48px;height:48px;border-radius:50% 50% 50% 0;background:var(--teal);transform:rotate(-45deg);box-shadow:0 10px 24px rgba(21,153,155,.3)}
+    .pin:after{content:"";position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;left:16px;top:16px}
+    .cta{padding:84px 0;background:var(--navy-deep);color:#fff;text-align:center}
+    .cta h2{color:#fff;max-width:760px;margin-inline:auto}
+    .cta p{color:#b8cbd5;max-width:650px;margin:0 auto}
+    .cta .hero-actions{justify-content:center}
+    .cta .primary{background:#fff;color:var(--navy-deep)}
+    .cta .secondary{background:transparent;border-color:rgba(255,255,255,.28);color:#fff}
+    .footer{background:#071e31;color:#dbe5ea;padding:34px 0}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .footer-logo{width:235px;height:56px;object-fit:contain;object-position:left;filter:brightness(0) invert(1);opacity:.9}
+    .footer-copy{text-align:right;color:#879da8;font-size:11px}
+    @media(max-width:980px){
+      .nav span:not(.nav-cta){display:none}
+      .hero-grid,.practice-grid,.location-panel{grid-template-columns:1fr}
+      .trust-grid{grid-template-columns:repeat(2,1fr);padding:18px 0}
+      .trust-item:nth-child(2){border-right:0}
+      .service-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:650px){
+      .shell{width:min(100% - 28px,1180px)}
+      .concept-bar .shell{justify-content:center}.concept-bar .detail{display:none}
+      .header-row{min-height:74px}.logo{width:215px;height:55px}.nav-cta{display:none}
+      .hero{padding:56px 0}.hero-grid{gap:38px}h1{font-size:49px}
+      .hero-actions{flex-direction:column}.demo-button{width:100%}
+      .care-card{padding:23px 18px}.care-card-head{display:block}.availability{display:inline-block;margin-top:10px}
+      .trust-grid{grid-template-columns:1fr 1fr}.trust-item{padding:14px}.trust-item strong{font-size:20px}
+      .section{padding:68px 0}.service-grid{grid-template-columns:1fr}.service{min-height:auto}
+      .practice-visual{min-height:380px}.visual-copy strong{font-size:31px}
+      .location-panel{padding:25px 19px}.location-info{grid-template-columns:1fr}
+      .footer-row{align-items:flex-start;flex-direction:column}.footer-copy{text-align:left}
+    }
+  </style>
+</head>
+<body>
+  <div class="concept-bar">
+    <div class="shell"><span class="concept-label"><span class="concept-dot"></span>Homepage design concept</span><span class="detail">Standalone preview · No live links or forms</span></div>
+  </div>
+
+  <header class="header">
+    <div class="shell header-row">
+      <img class="logo" src="nhs-logo.png" alt="Nephrology Hypertension Specialists">
+      <nav class="nav" aria-label="Homepage preview navigation"><span>About</span><span>Physicians</span><span>Patient resources</span><span>Locations</span><span class="nav-cta">Request an appointment</span></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">Specialized care · Personal approach</div>
+          <h1>Better kidney health starts with care that listens.</h1>
+          <p class="hero-copy">Expert nephrology and hypertension care for patients throughout Bucks and Montgomery counties—delivered with clarity, compassion, and continuity.</p>
+          <div class="hero-actions"><span class="demo-button primary">Request an appointment</span><span class="demo-button secondary">Meet our physicians</span></div>
+          <p class="hero-note">This design is a non-interactive presentation concept.</p>
+        </div>
+        <aside class="care-card">
+          <div class="care-card-head"><div><div class="eyebrow">How we can help</div><h3>Care centered around you</h3><p>Specialized support through every stage of kidney health.</p></div><span class="availability">Accepting patients</span></div>
+          <div class="care-list">
+            <div class="care-row"><span class="care-icon">01</span><div><strong>Kidney disease</strong><small>Evaluation and long-term management</small></div><span class="arrow">›</span></div>
+            <div class="care-row"><span class="care-icon">02</span><div><strong>Hypertension</strong><small>Diagnosis and treatment planning</small></div><span class="arrow">›</span></div>
+            <div class="care-row"><span class="care-icon">03</span><div><strong>Dialysis care</strong><small>Coordinated local treatment</small></div><span class="arrow">›</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="shell trust-grid">
+        <div class="trust-item"><strong>Since 1990</strong><span>Serving the local community</span></div>
+        <div class="trust-item"><strong>Specialized</strong><span>Kidney and blood pressure care</span></div>
+        <div class="trust-item"><strong>Connected</strong><span>Coordinated with local providers</span></div>
+        <div class="trust-item"><strong>Personal</strong><span>Clear, patient-first communication</span></div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="shell">
+        <div class="section-head"><div class="eyebrow">Our services</div><h2>Specialized support for every stage of kidney health.</h2><p>From early evaluation to ongoing treatment, our practice helps patients understand their health and move forward with confidence.</p></div>
+        <div class="service-grid">
+          <article class="service"><span class="service-number">01</span><h3>Chronic kidney disease</h3><p>Thoughtful evaluation, monitoring, and personalized care plans designed around each patient.</p></article>
+          <article class="service"><span class="service-number">02</span><h3>Hypertension care</h3><p>Focused assessment and management of complex or difficult-to-control blood pressure.</p></article>
+          <article class="service"><span class="service-number">03</span><h3>Dialysis coordination</h3><p>Continuity of care and local treatment coordination throughout the dialysis journey.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell practice-grid">
+        <div class="practice-visual"><div class="visual-copy"><span>Local expertise</span><strong>Advanced specialty care, close to home.</strong></div></div>
+        <div>
+          <div class="eyebrow">Why choose NHS</div>
+          <h2>Clinical experience with a genuinely personal feel.</h2>
+          <p class="hero-copy">Our physicians work closely with patients, families, primary-care providers, and local treatment centers to make complex care easier to navigate.</p>
+          <div class="feature-list">
+            <div class="feature"><span class="check">✓</span><div><strong>Clear explanations</strong><span>Practical guidance that helps patients understand diagnoses and next steps.</span></div></div>
+            <div class="feature"><span class="check">✓</span><div><strong>Continuity of care</strong><span>A consistent clinical team familiar with each patient’s history and goals.</span></div></div>
+            <div class="feature"><span class="check">✓</span><div><strong>Community connection</strong><span>Care coordinated across the Doylestown-area healthcare community.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="shell location-panel">
+        <div>
+          <div class="eyebrow">Doylestown office</div>
+          <h2>Convenient specialty care in the heart of Bucks County.</h2>
+          <p class="hero-copy">Visit our office in the Doylestown Hospital Pavilion, with local hospital and dialysis-center coordination nearby.</p>
+          <div class="location-info"><div><small>Address</small><strong>599 W. State St., Suite 100<br>Doylestown, PA 18901</strong></div><div><small>Office phone</small><strong>(215) 348-8020</strong></div></div>
+        </div>
+        <div class="map-card" aria-label="Abstract location map illustration"><span class="pin"></span></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="shell"><div class="eyebrow">Start the conversation</div><h2>Compassionate kidney care is closer than you think.</h2><p>Our team is ready to help patients prepare for their first visit and understand what comes next.</p><div class="hero-actions"><span class="demo-button primary">Request an appointment</span><span class="demo-button secondary">Call (215) 348-8020</span></div></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-row"><img class="footer-logo" src="nhs-logo.png" alt="Nephrology Hypertension Specialists"><div class="footer-copy">Standalone homepage presentation concept<br>Nothing on this page is interactive or connected.</div></div>
+  </footer>
+</body>
+</html>
