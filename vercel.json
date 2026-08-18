@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/((?!prospective-client-demo\\.html|nhs-logo\\.png).*)",
+      "destination": "/prospective-client-demo.html",
+      "permanent": false
+    }
+  ]
+}
